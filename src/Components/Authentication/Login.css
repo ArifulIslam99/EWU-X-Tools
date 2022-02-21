@@ -1,0 +1,162 @@
+*{
+    margin-bottom:7px;
+    padding: 0;
+    
+
+    box-sizing: border-box;
+}
+
+.background-main{
+    background-image: url("../../images/back.jpg");
+    height: 730px;;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+
+body{
+    
+    background:#fbf3ff
+}
+
+.container-main{
+    position:absolute;
+    max-width: 350px;
+    height:500px;
+    margin:auto;
+    top:50%;
+    left:50%;
+    
+    transform:translate(-50%,-50%);
+    
+
+}
+
+
+
+.myLeftCtn{
+
+    position: relative;
+    background: #fff;
+    border-radius: 25px;
+    height: 100%;
+    padding:25px;
+    padding-left:50px;
+    text-align: center;
+
+}
+
+
+.myLeftCtn header{
+    color:blueviolet;
+    font-size:24px;
+    font-weight:700;
+   
+    margin-bottom: 20px;
+    
+}
+.row{
+    height:100%;
+
+}
+
+.mycard{
+
+    position: relative;
+    background: #fff;
+    height:100%;
+    border-radius: 25px;
+    box-shadow: 0px 10px 40px -10px rgba(0,0,0,0.7);
+    
+
+}
+
+
+
+
+.box{
+    position:relative;
+    margin:20px;
+    margin-bottom:100px;
+
+}
+
+
+.myLeftCtn .myInput{
+   width:230px;
+   border-radius:25px ;
+   padding:10px;
+   padding-left: 50px;
+   border: none;
+   box-shadow: 0px 10px 49px -14px rgba(0,0,0.7);
+}
+
+.myLeftCtn .myInput:focus{
+    outline:none;
+
+}
+
+.myForm{
+
+    position:relative;
+    margin-top:50px;
+
+}
+
+.myLeftCtn .butt{
+    background: linear-gradient(45deg,#bb36fd,#9b00e8);
+    color:#fff;
+    width:230px;
+    border:none;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: opx 10px 41px -11px rgba(0,0,0,0.7);
+}
+
+.myLeftCtn .butt:hover{
+    background: linear-gradient(45deg,#c85bff,#b726ff);
+}
+
+.myLeftCtn .fas{
+    position: relative;
+    color:#bb36fd;
+    left:36px;
+}
+
+.butt_out{
+    background: transparent;
+    color: #fff;
+    width:120px;
+    border:2px solid #fff ;
+    border-radius: 25px;
+    padding:10px;
+    box-shadow: 0px 10px 40px -14px rgba(0,0,0,0.7);
+}
+
+.butt_out:focus{
+    border:2px solid #eecbff;
+
+}
+
+.butt_out:focus{
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
