@@ -6,9 +6,9 @@ import plus from '../../../src/images/plus-solid.svg'
 export const Navigation = () => {
   return (
     <div>
-        <Navbar collapseOnSelect expand="lg" style={{backgroundColor:'#5F6537'}} variant="dark">
+        <Navbar  collapseOnSelect expand="lg" style={{backgroundColor:'#5F6537'}} variant="dark">
   <Container>
-  <Navbar.Brand as={Link} to='/'> <img className='w-50' src={logo} alt="" /> </Navbar.Brand>
+  <Navbar.Brand  as={Link} to='/'> <img className='w-50' src={logo} alt="" /> </Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">

@@ -1,7 +1,7 @@
 import './App.css';
 import { Navigation } from './Components/Navigation/Navigation';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Login } from './Components/Authentication/Login';
+import { Login } from './Components/Authentication/Login/Login';
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
           <Route exact path="/">
               <Login></Login>
           </Route>
+          
         </Switch>
        </BrowserRouter>
     </div>
