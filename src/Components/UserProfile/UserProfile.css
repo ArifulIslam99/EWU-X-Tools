@@ -1,11 +1,9 @@
-body{
-    margin-top:20px;
+.profile_body{
+    padding-top: 60px;
+    padding-bottom: 120px;
     background-color: gray;
-    background-image: url("../../images/pexels-photo-2249964.jpeg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    height: 100%
+    height: 100%;
+   
 }
 .main{
     padding: 15px;

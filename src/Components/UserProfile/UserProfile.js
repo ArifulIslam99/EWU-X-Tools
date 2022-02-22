@@ -3,7 +3,7 @@ import "./UserProfile.css"
 import ProfileImage from "../../images/image.png"
 export const UserProfile =()=>{
     return (
-        <div>
+        <div className="profile_body">
             <div class="container">
          <div class="main">
               <div class="topbar">
