@@ -1,0 +1,46 @@
+.profile_body{
+    padding-top: 60px;
+    padding-bottom: 120px;
+    background-color: gray;
+    height: 100%;
+   
+}
+.main{
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.topbar{
+    background-color: rgb(88, 70, 136);
+    overflow: hidden;
+}
+.topbar a{
+    float: right;
+    color: whitesmoke;
+    text-align: center;
+    padding: 20px 26px;
+    text-decoration: none;
+    font-size: 26px;
+}
+.sidebar {
+    background-color: rgb(88, 70, 136);
+    color: beige;
+    height:100%
+}
+.sidebar a{
+    margin-left: 10px;
+    display: block;
+    color:white;
+    padding-bottom: 10px;
+    font-size: 30px;
+    text-decoration: none;
+}
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.profile_image{
+     
+      border-radius: 15px;
+      margin-top: 15px;
+}
