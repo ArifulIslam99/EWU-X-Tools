@@ -2,10 +2,7 @@ import './App.css';
 import { Navigation } from './Components/Navigation/Navigation';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Login } from './Components/Authentication/Login/Login';
-<<<<<<< HEAD
 import { UserProfile } from './Components/UserProfile/UserProfile';
-=======
->>>>>>> authentication
 import { Register } from './Components/Authentication/Register/Register';
 
 function App() {
