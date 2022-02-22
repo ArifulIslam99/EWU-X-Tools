@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import "./Login.css"
 import loginbg from "../../../images/loginbg.jpeg"
+
 export const Login = () => {
+
   const loginStyle={
-    background :   `url(${lsoginbg})`,
+    background :   `url(${loginbg})`,
     backgroundSize :'cover',
     width: '100%',
     backgroundRepeat:'no-repeat',
