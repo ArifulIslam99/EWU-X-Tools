@@ -20,8 +20,8 @@ export const UserProfile =()=>{
                          <div class="card_body">
                              <img src = {ProfileImage} class ="profile_image" width="150" height="100"/>
                              <div class="mt-3">
-                                 <h1> Hello Burt!</h1>
-                                 <br></br>
+                                 <h1 style={{color:'red'}}> Hello Burt!</h1>
+                                 <br/><br/>
                                  <a href="">Home</a>
                                  <a href="">Work</a>
                                  <a href="">Support</a>
