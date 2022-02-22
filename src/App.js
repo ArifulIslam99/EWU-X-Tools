@@ -2,7 +2,10 @@ import './App.css';
 import { Navigation } from './Components/Navigation/Navigation';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Login } from './Components/Authentication/Login/Login';
+<<<<<<< HEAD
 import { UserProfile } from './Components/UserProfile/UserProfile';
+=======
+>>>>>>> authentication
 import { Register } from './Components/Authentication/Register/Register';
 
 function App() {
@@ -18,7 +21,8 @@ function App() {
           <Route path = "/profile" >
             <UserProfile></UserProfile>
           </Route>
-          <Route path='/register'>
+          
+          <Route path="/register">
             <Register></Register>
           </Route>
         </Switch>
