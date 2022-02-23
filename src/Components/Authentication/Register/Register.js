@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 export const Register =( )=>{
   
     const [registerData, setRegisterData] = useState({})
-    const {registerUser, loading, error, googleLogIn} = useAuth()
+    const {registerUser, loading, error, googleLogIn, githubLogin} = useAuth()
     const history = useHistory()
 
     const handleOnChange = e =>{
@@ -32,6 +32,10 @@ const handleRegisterSubmit = e =>{
 
 const handleGoogleSignIn = () =>{
     googleLogIn(history)
+  }
+
+  const handleGithubLogin = () =>{
+    githubLogin(history)
   }
 
 
@@ -125,7 +129,7 @@ const handleGoogleSignIn = () =>{
                       <p>-------------------</p>
                       <p className='fw-bold'>Sign in with</p>
                       <Button onClick={handleGoogleSignIn} className='me-1' variant="danger"><i class="fab fa-google"></i></Button>
-                      <Button variant="secondary"><i class="fab fa-github"></i></Button>
+                      <Button onClick={handleGithubLogin} variant="secondary"><i class="fab fa-github"></i></Button> <br />
 
                       {
                           (error) && 

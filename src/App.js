@@ -5,6 +5,7 @@ import { Login } from './Components/Authentication/Login/Login';
 import { UserProfile } from './Components/UserProfile/UserProfile';
 import { Register } from './Components/Authentication/Register/Register';
 import AuthProvider from './Contexts/AuthProvider/AuthProvider';
+import { PrivateRoute } from './Components/Authentication/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -13,17 +14,23 @@ function App() {
         <BrowserRouter>
        <Navigation></Navigation>
         <Switch>
-          <Route exact path="/">
-            
+          
+          <PrivateRoute exact path = "/" >
+            <UserProfile></UserProfile>
+          </PrivateRoute>
+
+          <Route exact path="/login">
               <Login></Login>
           </Route>
-          <Route path = "/profile" >
+
+          <PrivateRoute path = "/profile" >
             <UserProfile></UserProfile>
-          </Route>
+          </PrivateRoute>
           
           <Route path="/register">
             <Register></Register>
           </Route>
+
         </Switch>
        </BrowserRouter>
         </AuthProvider>

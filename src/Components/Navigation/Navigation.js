@@ -29,10 +29,13 @@ export const Navigation = () => {
     </Nav>
 
     <Nav>
-      {
-        (user.uid) && <p style={{color:'white', marginTop:'3px'}}> <img
-         style={{width:'35px', height:'35px'}}
-        src={user.photoURL} alt="" /> Welcome, {user.displayName} <Button variant='danger' onClick={logout}> logout </Button> </p>
+      
+
+         {
+        (user.uid) && <p style={{color:'white', marginTop:'3px'}}>
+          { (user.photoURL) && <span> <img style={{width:'35px', height:'35px'}}
+        src={user.photoURL} alt="" /> Welcome, {user.displayName} </span> }
+         <Button  variant='danger' onClick={logout}> logout </Button> </p>
       }
     </Nav>
    

@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom";
 
 export const Login = () => {
   const [loginData, setLoginData] = useState({})
-  const {loginUser, loading, googleLogIn, error} = useAuth()
+  const {loginUser, loading, googleLogIn, error, githubLogin} = useAuth()
   const history = useHistory()
 
 
@@ -26,6 +26,10 @@ export const Login = () => {
 
   const handleGoogleSignIn = () =>{
     googleLogIn(history)
+  }
+
+  const handleGithubLogin = () =>{
+    githubLogin(history)
   }
 
 
@@ -96,7 +100,7 @@ const loginStyle={
                       <p>-------------------</p>
                       <p className='fw-bold'>Sign in with</p>
                       <Button onClick={handleGoogleSignIn} className='me-1' variant="danger"><i class="fab fa-google"></i></Button>
-                      <Button variant="secondary"><i class="fab fa-github"></i></Button>
+                      <Button onClick={handleGithubLogin} variant="secondary"><i class="fab fa-github"></i></Button> <br />
 
                       {
                           (error) && 

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import initializeFirebase from "../Firebase/firebase.init";
 import { getAuth, createUserWithEmailAndPassword,
      signOut, signInWithEmailAndPassword, onAuthStateChanged,GoogleAuthProvider
-    ,signInWithPopup, } from "firebase/auth";
+    ,signInWithPopup, GithubAuthProvider } from "firebase/auth";
 
 
 
@@ -14,6 +14,7 @@ const useFirebase = () =>{
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("")
     const GoogleProvider = new GoogleAuthProvider();
+    const GitHubProvider = new GithubAuthProvider();
 
     // Function for user registration
 
@@ -60,6 +61,21 @@ const useFirebase = () =>{
         }).finally(()=>setLoading(false));
       }
 
+      // Function fot github login
+
+      const githubLogin = history =>{
+        setLoading(true)
+        signInWithPopup(auth, GitHubProvider)
+        .then((result) => {
+          const credential = GithubAuthProvider.credentialFromResult(result);
+          const token = credential.accessToken;
+          const user = result.user;
+          history.push('./profile')
+        }).catch((error) => {
+          setError(error.message)
+        }).finally(()=>setLoading(false));
+      }
+
 
     // Function to handle user state change 
 
@@ -95,6 +111,7 @@ const useFirebase = () =>{
         logout,
         registerUser,
         googleLogIn,
+        githubLogin,
         error 
     }
 
