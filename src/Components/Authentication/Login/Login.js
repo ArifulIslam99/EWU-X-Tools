@@ -1,20 +1,47 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Button } from 'react-bootstrap'
+import { Button, Spinner } from 'react-bootstrap'
 import "./Login.css"
 import loginbg from "../../../images/loginbg.jpeg"
+import useAuth from '../../../hooks/useAuth'
+import { useHistory } from "react-router-dom";
 
 export const Login = () => {
+  const [loginData, setLoginData] = useState({})
+  const {loginUser, loading, googleLogIn, error} = useAuth()
+  const history = useHistory()
 
-  const loginStyle={
-    background :   `url(${loginbg})`,
-    backgroundSize :'cover',
-    width: '100%',
-    backgroundRepeat:'no-repeat',
-    height:'870px',
-   
 
+  const handleOnChange = e =>{
+
+    const field = e.target.name ;
+    const value = e.target.value ;
+    const newLoginData = {...loginData};
+    newLoginData[field] = value
+    setLoginData(newLoginData)
+  
+  
+  }
+
+  const handleGoogleSignIn = () =>{
+    googleLogIn(history)
+  }
+
+
+const handleLoginSubmit = e =>{
+    loginUser(loginData.email, loginData.password, history)
+    e.preventDefault()
+
+}
+
+const loginStyle={
+  background :   `url(${loginbg})`,
+  backgroundSize :'cover',
+  width: '100%',
+  backgroundRepeat:'no-repeat',
+  height:'870px',
+ 
 }
 
   return (
@@ -23,15 +50,16 @@ export const Login = () => {
             
             </div>
             <div className="mx-auto p-4 login" style={{border: '2px solid gray',
-                        
-    
                         marginTop:'-600px',
                         borderRadius:'30px'
                           }}>
 
 
                <h4 className="fw-bold">Login</h4>
-               <form>
+               {
+                 (!loading) ? 
+
+                 <form onSubmit={handleLoginSubmit}>
                    
                    <input 
                     style={{width: '60%'}}
@@ -40,6 +68,7 @@ export const Login = () => {
                    id="standard-basic" 
                    placeholder='Enter Email'
                    name="email"
+                   onChange={handleOnChange}
                    type="email"/> <br />
 
                    <input
@@ -49,6 +78,7 @@ export const Login = () => {
                    id="standard-basic" 
                    placeholder="Enter Password"
                    type="password" 
+                   onChange={handleOnChange}
                    name="password"/> <br />
                    
 
@@ -58,11 +88,20 @@ export const Login = () => {
                    style={{textDecoration:'none'}}
                    to="/register"> Please Register</Link></span></p>
                    
-                      </form> 
+                      </form> :
+
+                    <Spinner animation="grow" />
+               }
+
                       <p>-------------------</p>
                       <p className='fw-bold'>Sign in with</p>
-                      <Button className='me-1' variant="danger"><i class="fab fa-google"></i></Button>
+                      <Button onClick={handleGoogleSignIn} className='me-1' variant="danger"><i class="fab fa-google"></i></Button>
                       <Button variant="secondary"><i class="fab fa-github"></i></Button>
+
+                      {
+                          (error) && 
+                          <p style={{color:'red'}}> {error} </p>
+                      }
                 
             </div>
 

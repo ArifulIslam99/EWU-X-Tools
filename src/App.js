@@ -4,11 +4,13 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Login } from './Components/Authentication/Login/Login';
 import { UserProfile } from './Components/UserProfile/UserProfile';
 import { Register } from './Components/Authentication/Register/Register';
+import AuthProvider from './Contexts/AuthProvider/AuthProvider';
 
 function App() {
   return (
     <div className="App">
-       <BrowserRouter>
+        <AuthProvider>
+        <BrowserRouter>
        <Navigation></Navigation>
         <Switch>
           <Route exact path="/">
@@ -24,6 +26,7 @@ function App() {
           </Route>
         </Switch>
        </BrowserRouter>
+        </AuthProvider>
     </div>
   );
 }

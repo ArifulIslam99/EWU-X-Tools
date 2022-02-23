@@ -1,9 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom'
-import { Button } from 'react-bootstrap'
+import { Button, Spinner } from 'react-bootstrap'
 
 import loginbg from "../../../images/loginbg.jpeg"
+import useAuth from "../../../hooks/useAuth";
+import { useHistory } from "react-router-dom";
 export const Register =( )=>{
+  
+    const [registerData, setRegisterData] = useState({})
+    const {registerUser, loading, error, googleLogIn} = useAuth()
+    const history = useHistory()
+
+    const handleOnChange = e =>{
+    const field = e.target.name ;
+    const value = e.target.value ;
+    const newRegisterData = {...registerData};
+    newRegisterData[field] = value
+    setRegisterData(newRegisterData)
+  }
+
+
+const handleRegisterSubmit = e =>{
+    if(registerData.password !== registerData.password2){
+        alert("Password did not match")
+    }
+
+    registerUser(registerData.email, registerData.password, history)
+    e.preventDefault()
+
+}
+
+const handleGoogleSignIn = () =>{
+    googleLogIn(history)
+  }
+
+
     const registerStyle={
         background :   `url(${loginbg})`,
         backgroundSize :'cover',
@@ -28,17 +59,17 @@ export const Register =( )=>{
                <h4 className="fw-bold">Register Now</h4>
                 
 
-                       <form>
+                       { (!loading) ? <form onSubmit={handleRegisterSubmit}>
                    
                        <input 
                        style={{width: '60%'}}
                        required
                        className="my-2"
                        id="standard-basic" 
-                       placeholder="Enter Name" 
+                       placeholder="Enter Full Name" 
                        name="name"
                        type="text"
-                      
+                       onChange={handleOnChange}
                       /> <br />
 
                        <input 
@@ -49,7 +80,7 @@ export const Register =( )=>{
                        placeholder="Enter Email" 
                        name="email"
                        type="email"
-                       
+                       onChange={handleOnChange}
                       /> <br />
 
                        <input 
@@ -60,7 +91,7 @@ export const Register =( )=>{
                        placeholder="Enter Password"
                        type="password" 
                        name="password"
-                      
+                       onChange={handleOnChange}
                       /> <br />
 
                        <input
@@ -71,7 +102,7 @@ export const Register =( )=>{
                        placeholder="Re-Enter Password"
                        type="password" 
                        name="password2"
-                      
+                       onChange={handleOnChange}
                       /> <br />
                       
      
@@ -83,7 +114,9 @@ export const Register =( )=>{
                    style={{textDecoration:'none'}}
                    to="/"> Please Login</Link></span></p>
 
-                          </form> 
+                          </form> :
+                          <Spinner animation="grow" />
+                          }
 
                         
                    
@@ -91,8 +124,13 @@ export const Register =( )=>{
                   
                       <p>-------------------</p>
                       <p className='fw-bold'>Sign in with</p>
-                      <Button className='me-1' variant="danger"><i class="fab fa-google"></i></Button>
+                      <Button onClick={handleGoogleSignIn} className='me-1' variant="danger"><i class="fab fa-google"></i></Button>
                       <Button variant="secondary"><i class="fab fa-github"></i></Button>
+
+                      {
+                          (error) && 
+                          <p style={{color:'red'}}> {error} </p>
+                      }
 
                      
                 
