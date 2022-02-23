@@ -1,8 +1,9 @@
 import React from "react"
 import "./UserProfile.css"
 
-import ProfileImage from "../../images/image.png"
+import ProfileImage from "../../images/putin.webp"
 import useAuth from "../../hooks/useAuth"
+import { Button, Spinner } from "react-bootstrap"
 export const UserProfile =()=>{
     const {user,logout} = useAuth()
     return (
@@ -21,14 +22,16 @@ export const UserProfile =()=>{
                      <div class="card text-center sidebar">
 
                          <div class="card_body">
-                             <img src = {user.photoURL} class ="profile_image" width="120" height="100"/>
+                             <img src={ProfileImage} class ="profile_image" width="120" height="100"/>
                              <div class="mt-3">
-                                 <h1 style={{color:'red'}}> Hello {user.displayName.slice(0,6)}!</h1>
+                                 <h1 style={{color:'red'}}> Hello { user.displayName && <span> {user.displayName.slice(0,6)} </span> } !</h1>
                                  <br/><br/>
                                  <a href=""> <i class="fab fa-creative-commons-share"></i> Create</a>
                                  <a href=""><i class="fab fa-facebook"> </i> Facebook</a>
                                  <a href=""><i class="fab fa-github"> </i> GitHub</a>
-                                 <a href=""> <i class="fab fa-linkedin"> </i> LinkedIn </a>
+                                 <a href=""> <i class="fab fa-linkedin"> </i> LinkedIn</a>
+
+                                 <Button><i class="fas fa-edit"></i> Edit Social Media</Button>
                                 
                              </div>
                          </div>
@@ -46,7 +49,14 @@ export const UserProfile =()=>{
                                      <h5><b>Full Name</b></h5>
                                  </div>
                                  <div class="col-md-9 text-secondary">
-                                     {user.displayName.toUpperCase()}
+                                     {
+                                         user.displayName ? 
+
+                                         <p>{user.displayName.toUpperCase()} <i class="fas fa-edit"></i></p> :
+                                         
+                                         <p>Will be available later <i class="fas fa-edit"></i></p>
+                                     }
+                                     
                                  </div>
                              </div>
                              <hr></hr>
@@ -55,7 +65,7 @@ export const UserProfile =()=>{
                                      <h5><b>Email</b></h5>
                                  </div>
                                  <div class="col-md-9 text-secondary">
-                                     {user.email}
+                                     {user.email} <i class="fas fa-edit"></i>
                                  </div>
                              </div>
                              <hr></hr>
@@ -64,7 +74,7 @@ export const UserProfile =()=>{
                                      <h5><b>Phone Number</b></h5>
                                  </div>
                                  <div class="col-md-9 text-secondary">
-                                     01987654321
+                                     01987654321 <i class="fas fa-edit"></i>
                                  </div>
                              </div>
                              <hr></hr>
@@ -73,7 +83,7 @@ export const UserProfile =()=>{
                                      <h5><b>Address</b></h5>
                                  </div>
                                  <div class="col-md-9 text-secondary">
-                                     Street no.7, House 31/32
+                                     Street no.7, House 31/32 <i class="fas fa-edit"></i>
                                  </div>
                              </div>
                          </div>
