@@ -54,7 +54,7 @@ const loginStyle={
             
             </div>
             <div className="mx-auto p-4 login" style={{border: '2px solid gray',
-                        marginTop:'-600px',
+                        marginTop:'-700px',
                         borderRadius:'30px'
                           }}>
 

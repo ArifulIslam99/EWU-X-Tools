@@ -55,7 +55,7 @@ const handleGoogleSignIn = () =>{
             
             </div>
             <div className="mx-auto p-4 login" style={{border: '2px solid gray',
-                        marginTop:'-700px',
+                        marginTop:'-730px',
                         borderRadius:'30px'
                           }}>
 
