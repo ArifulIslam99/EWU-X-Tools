@@ -1,16 +1,19 @@
 import React from "react"
 import "./UserProfile.css"
+
 import ProfileImage from "../../images/image.png"
+import useAuth from "../../hooks/useAuth"
 export const UserProfile =()=>{
+    const {user,logout} = useAuth()
     return (
         <div className="profile_body">
             <div class="container">
          <div class="main">
               <div class="topbar">
-                  <a href="">logout</a>
-                  <a href="">Support</a>
-                  <a href="">Home</a>
-                  <a href="">Work</a>
+                  <a onClick={logout}  href="">logout</a>
+                  <a href="">Explore</a> 
+                  <a href="">Mail</a>
+                  <a href="">Projects</a>
               </div>
 
               <div class="row">
@@ -18,15 +21,14 @@ export const UserProfile =()=>{
                      <div class="card text-center sidebar">
 
                          <div class="card_body">
-                             <img src = {ProfileImage} class ="profile_image" width="150" height="100"/>
+                             <img src = {user.photoURL} class ="profile_image" width="120" height="100"/>
                              <div class="mt-3">
-                                 <h1 style={{color:'red'}}> Hello Burt!</h1>
+                                 <h1 style={{color:'red'}}> Hello {user.displayName.slice(0,6)}!</h1>
                                  <br/><br/>
-                                 <a href="">Home</a>
-                                 <a href="">Work</a>
-                                 <a href="">Support</a>
-                                 <a href="">Settings</a>
-                                 <a href=""> Signout</a>
+                                 <a href=""> <i class="fab fa-creative-commons-share"></i> Create</a>
+                                 <a href=""><i class="fab fa-facebook"> </i> Facebook</a>
+                                 <a href=""><i class="fab fa-github"> </i> GitHub</a>
+                                 <a href=""> <i class="fab fa-linkedin"> </i> LinkedIn </a>
                                 
                              </div>
                          </div>
@@ -44,7 +46,7 @@ export const UserProfile =()=>{
                                      <h5><b>Full Name</b></h5>
                                  </div>
                                  <div class="col-md-9 text-secondary">
-                                     Burt Macklin
+                                     {user.displayName.toUpperCase()}
                                  </div>
                              </div>
                              <hr></hr>
@@ -53,7 +55,7 @@ export const UserProfile =()=>{
                                      <h5><b>Email</b></h5>
                                  </div>
                                  <div class="col-md-9 text-secondary">
-                                     abc@gmail.com
+                                     {user.email}
                                  </div>
                              </div>
                              <hr></hr>
