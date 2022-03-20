@@ -14,7 +14,6 @@ export const UserProfile =()=>{
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const [address, setAddress] = useState(null) 
     const history = useHistory()
     
     const [userInfo, setUserInfo] = useState(null)
@@ -127,10 +126,10 @@ export const UserProfile =()=>{
             <div className="container">
          <div className="main">
               <div className="topbar">
-                  <a onClick={logout}  href="">logout</a>
-                  <a href="">Explore</a> 
-                  <a href="">Mail</a>
-                  <a href="">Projects</a>
+                  <a onClick={logout} href="" >logout</a>
+                  <Link to='explore'>Explore</Link>
+                  {/* <a href="">Mail</a> */}
+                  <Link to='projects'>Projects</Link>
               </div>
 
               <div className="row">
