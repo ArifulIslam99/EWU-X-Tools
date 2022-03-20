@@ -25,7 +25,7 @@ const handleRegisterSubmit = e =>{
         alert("Password did not match")
     }
 
-    registerUser(registerData.email, registerData.password, history)
+    registerUser(registerData.email, registerData.password, registerData.name, history)
     e.preventDefault()
 
 }

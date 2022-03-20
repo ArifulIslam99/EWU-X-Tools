@@ -6,10 +6,11 @@ import "./Login.css"
 import loginbg from "../../../images/loginbg.jpeg"
 import useAuth from '../../../hooks/useAuth'
 import { useHistory } from "react-router-dom";
+const axios = require('axios');
 
 export const Login = () => {
   const [loginData, setLoginData] = useState({})
-  const {loginUser, loading, googleLogIn, error, githubLogin} = useAuth()
+  const {loginUser, loading, googleLogIn, error, githubLogin, resetPassword} = useAuth()
   const history = useHistory()
 
 
@@ -36,7 +37,6 @@ export const Login = () => {
 const handleLoginSubmit = e =>{
     loginUser(loginData.email, loginData.password, history)
     e.preventDefault()
-
 }
 
 const loginStyle={
@@ -46,6 +46,15 @@ const loginStyle={
   backgroundRepeat:'no-repeat',
   height:'870px',
  
+} 
+
+const  handleForgotPassword = () => {
+  if(loginData.email===null){
+    alert("Enter a valid Email")
+  }
+  else{
+    resetPassword(loginData.email)
+  }
 }
 
   return (
@@ -85,7 +94,8 @@ const loginStyle={
                    onChange={handleOnChange}
                    name="password"/> <br />
                    
-
+                   <p className='reset' onClick={handleForgotPassword}>Forgot Password?</p>
+                    
                    <Button className="my-2" type="submit">Submit</Button> <br />
                    
                    <p className='fw-bold'>New user ? <span ><Link
@@ -106,6 +116,7 @@ const loginStyle={
                           (error) && 
                           <p style={{color:'red'}}> {error} </p>
                       }
+                
                 
             </div>
 

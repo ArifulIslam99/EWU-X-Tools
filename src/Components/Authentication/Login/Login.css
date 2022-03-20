@@ -16,6 +16,15 @@ html, body
     height: 35px;
 }
 
+.reset{
+    color: rgb(128, 89, 18);
+}
+
+.reset:hover{
+    color: blue;
+    cursor: pointer;
+}
+
 
 @media screen and (max-width: 600px) {
 
