@@ -5,7 +5,7 @@ import { Button, Spinner } from 'react-bootstrap'
 import loginbg from "../../../images/loginbg.jpeg"
 import useAuth from "../../../hooks/useAuth";
 import { useHistory } from "react-router-dom";
-export const Register =( )=>{
+     const Register =( )=>{
   
     const [registerData, setRegisterData] = useState({})
     const {registerUser, loading, error, googleLogIn, githubLogin} = useAuth()
@@ -146,3 +146,5 @@ const handleGoogleSignIn = () =>{
         </div>
     )
 }
+
+export default Register;

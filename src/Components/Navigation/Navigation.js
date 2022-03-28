@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import logo from '../../../src/images/logo2.png'
 import plus from '../../../src/images/plus-solid.svg'
 import useAuth from '../../hooks/useAuth'
-export const Navigation = () => {
+const Navigation = () => {
    
   const {user, logout} = useAuth();
   const [userInfo, setUserInfo] = useState(null)
@@ -53,3 +53,5 @@ export const Navigation = () => {
     </div>
   )
 }
+
+export default Navigation;

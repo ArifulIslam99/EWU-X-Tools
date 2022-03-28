@@ -5,8 +5,9 @@ import ProfileImage from "../../images/image.png"
 import useAuth from "../../hooks/useAuth"
 import { Button, Modal, Spinner } from "react-bootstrap"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
+    const UserProfile =()=>{
 
-export const UserProfile =()=>{
+
     const {user,logout} = useAuth()
     const [fbUrl, setFbUrl] = useState('')
     const [gitUrl, setGitUrl] = useState('')
@@ -170,7 +171,7 @@ export const UserProfile =()=>{
                          <div className="card-body">
                              <div className="row">
                                  <div className="col-md-3">
-                                     <h5><b>Full Name</b></h5>
+                                     <h5 ><b>Full Name</b></h5>
                                  </div>
                                  <div className="col-md-9 text-secondary">
                                      {
@@ -271,3 +272,5 @@ export const UserProfile =()=>{
        
     )
 }
+
+export default UserProfile;

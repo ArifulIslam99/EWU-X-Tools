@@ -8,11 +8,11 @@ import useAuth from '../../../hooks/useAuth'
 import { useHistory } from "react-router-dom";
 const axios = require('axios');
 
-export const Login = () => {
+  const  Login = () => {
   const [loginData, setLoginData] = useState({})
-  const {loginUser, loading, googleLogIn, error, githubLogin, resetPassword} = useAuth()
+  
   const history = useHistory()
-
+  const {loginUser, loading, googleLogIn, error, githubLogin, resetPassword} = useAuth()
 
   const handleOnChange = e =>{
 
@@ -124,3 +124,5 @@ const  handleForgotPassword = () => {
     </div>
   )
 }
+
+export default Login;
