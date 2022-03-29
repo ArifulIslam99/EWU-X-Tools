@@ -6,6 +6,7 @@ import { UserProfile } from './Components/UserProfile/UserProfile';
 import { Register } from './Components/Authentication/Register/Register';
 import AuthProvider from './Contexts/AuthProvider/AuthProvider';
 import { PrivateRoute } from './Components/Authentication/PrivateRoute/PrivateRoute';
+import Explore from './Components/Explore/Explore';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <UserProfile></UserProfile>
           </PrivateRoute>
 
+
           <Route exact path="/login">
               <Login></Login>
           </Route>
@@ -26,6 +28,11 @@ function App() {
           <PrivateRoute path = "/profile" >
             <UserProfile></UserProfile>
           </PrivateRoute>
+
+          <PrivateRoute path = "/explore" >
+           <Explore></Explore>
+          </PrivateRoute>
+
           
           <Route path="/register">
             <Register></Register>
