@@ -30,7 +30,7 @@ const Navigation = () => {
     <Nav className="me-auto">
       
       <Nav.Link as={Link} to='/profile'>User Profile</Nav.Link>
-      <Nav.Link as={Link} to='/newproject'> <img style={{display:'inline', width:'20px'}} src={plus} alt="" /> Create</Nav.Link>
+      <Nav.Link as={Link} to='/create'> <img style={{display:'inline', width:'20px'}} src={plus} alt="" /> Create</Nav.Link>
     
 
     </Nav>
