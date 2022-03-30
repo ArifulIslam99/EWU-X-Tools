@@ -3,8 +3,9 @@ import "./Create.css"
 
 const Create=()=>{
 return(
-    <div class="create-container mx-auto ">
-    <div class="title">Create a New Project</div>
+   <div style={{padding:'6%'}} className="create-box">
+      <div class="create-container mx-auto ">
+    <div class="title text-start">Create a New Project</div>
     <div class="content">
       <form action="#">
         <div class="user-details">
@@ -40,6 +41,7 @@ return(
       </form>
     </div>
   </div>
+   </div>
 )
 }
 
