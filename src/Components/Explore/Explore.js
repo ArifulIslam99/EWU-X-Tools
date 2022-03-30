@@ -31,10 +31,11 @@ import useAuth from '../../hooks/useAuth'
             placeholder='Write Email to Search'
             onBlur={e => setSearchInput(e.target.value)}
             className='me-2'
+            data-testid="search-box"
             style={{width:'40%', height:'40px',border:'1px solid orange', borderRadius:'10px', textAlign:"center"}}
             type="text" name="" id="" /> 
             
-            <Button onClick={handleSearchButton} className='mb-2' variant="danger">Search</Button>
+            <Button data-testid="search-button" onClick={handleSearchButton} className='mb-2' variant="danger">Search</Button>
 
             {
               (userInfo!=null & buttonValue===1) ?
