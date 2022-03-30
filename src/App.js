@@ -7,6 +7,7 @@ import  Register  from './Components/Authentication/Register/Register';
 import AuthProvider from './Contexts/AuthProvider/AuthProvider';
 import { PrivateRoute } from './Components/Authentication/PrivateRoute/PrivateRoute';
 import Explore from './Components/Explore/Explore';
+import Create from './Components/Create/Create';
 
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
           
           <Route path="/register">
             <Register></Register>
+          </Route>
+          <Route path="/create">
+            <Create></Create>
           </Route>
 
         </Switch>
