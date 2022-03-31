@@ -5,7 +5,6 @@ import ProfileImage from "../../images/image.png"
 import useAuth from "../../hooks/useAuth"
 import { Button, Modal, Spinner } from "react-bootstrap"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
-import Project from "./Project"
     const UserProfile =()=>{
 
 
@@ -238,7 +237,7 @@ import Project from "./Project"
                                         <h5 style={{border: "2px solid grey"}}>  Git Repo </h5> 
 
                                         {
-                                            projects.map(pr => <p> <a href={pr.gitRepo} target="_blank" rel="noopener noreferrer"> {pr.gitRepo} </a></p>)
+                                            projects.map(pr => <p> <a style={{textDecoration:'none'}} href={pr.gitRepo} target="_blank" > {pr.gitRepo} </a></p>)
                                         }             
                             </div>
                                  
