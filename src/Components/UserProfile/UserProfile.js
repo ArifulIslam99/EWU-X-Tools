@@ -5,12 +5,14 @@ import ProfileImage from "../../images/image.png"
 import useAuth from "../../hooks/useAuth"
 import { Button, Modal, Spinner } from "react-bootstrap"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
+import Project from "./Project"
     const UserProfile =()=>{
 
 
     const {user,logout} = useAuth()
     const [fbUrl, setFbUrl] = useState('')
     const [gitUrl, setGitUrl] = useState('')
+    const [projects, setProjects] = useState([])
     const [linkedInUrl, setLinkedInUrl] = useState('')
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -23,7 +25,13 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
       fetch(`https://thawing-cove-39806.herokuapp.com/user/${user.email}`)
       .then(res => res.json())
       .then(data => setUserInfo(data))  
-  },[])
+  },[]) 
+
+  useEffect(()=>{
+    fetch(`https://thawing-cove-39806.herokuapp.com/project/${user.email}`)
+    .then(res => res.json())
+    .then(data => setProjects(data))  
+},[]) 
 
 
     
@@ -220,12 +228,20 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
                          <h1 class ="m-3 text-center">Recent Projects</h1>
                          <div className="card-body">
                              <div className="row">
-                                 <div className="col-md-3">
-                                     <h5> <b>Project Name</b></h5>
-                                 </div>
-                                 <div className="col-md-9 text-secondary">
-                                      Project Description 
-                                 </div>
+                             <div className="col-md-4"> 
+                                 <h5 style={{border: "2px solid grey"}}> <b> Project Name  </b></h5>
+                                 {
+                                     projects.map(pr => <p> {pr.projectName} </p>)
+                                 }
+                            </div>
+                            <div className="col-md-7 ">
+                                        <h5 style={{border: "2px solid grey"}}>  Git Repo </h5> 
+
+                                        {
+                                            projects.map(pr => <p> <a href={pr.gitRepo} target="_blank" rel="noopener noreferrer"> {pr.gitRepo} </a></p>)
+                                        }             
+                            </div>
+                                 
                              </div>
                              <hr></hr>
                          </div>
