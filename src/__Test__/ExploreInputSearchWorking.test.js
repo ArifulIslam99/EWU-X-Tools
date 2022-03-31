@@ -1,9 +1,7 @@
 import React from "react";
 import  ReactDOM  from "react-dom";
-import  Explore  from "../Explore/Explore";
-
+import Explore from "../Components/Explore/Explore"
 import {render, fireEvent } from "@testing-library/react";
-
 
 test("Input Filed work perfectly", ()=>{ 
     const { queryByTestId, queryAllByPlaceholderText } = render(<Explore/>);

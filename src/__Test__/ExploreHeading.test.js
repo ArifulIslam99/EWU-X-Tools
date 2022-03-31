@@ -1,6 +1,6 @@
 import React from "react";
 import  ReactDOM  from "react-dom";
-import  Explore  from "../Explore/Explore";
+import Explore from "../Components/Explore/Explore"
 
 /// Test to check Heading in Explore Page
 test("Check heading under div is discoverable", ()=>{
