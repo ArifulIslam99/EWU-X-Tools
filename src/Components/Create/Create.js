@@ -31,7 +31,7 @@ const Create=()=>{
       })
    }
 return(
-   <div style={{padding:'6%'}} className="create-box">
+   <div style={{padding:'3%'}} className="create-box">
       <div className="create-container mx-auto ">
     <div className="title text-start">Create a New Project</div>
     <div className="content">

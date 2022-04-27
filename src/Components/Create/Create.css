@@ -22,7 +22,7 @@ body{
   font-family: 'Poppins',sans-serif;
 }
 .create-container{
-  max-width: 700px;
+  max-width: 600px;
   width: 100%;
   background-color: #fff;
   padding: 25px 30px;
@@ -32,7 +32,7 @@ body{
   
 }
 .create-container .title{
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 500;
   position: relative;
 }
@@ -53,7 +53,7 @@ body{
   margin: 20px 0 12px 0;
 }
 form .user-details .input-box{
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   width: calc(100% / 2 - 20px);
 }
 form .input-box span.details{

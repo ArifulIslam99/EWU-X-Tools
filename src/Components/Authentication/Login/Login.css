@@ -1,7 +1,7 @@
-html, body
+/* html, body
 {
     height: 100%;
-}
+} */
 
 .login{
     width: 30%;
@@ -13,7 +13,7 @@ html, body
     border: 1px solid rgb(118, 119, 113);
     border-radius: 10px;
     text-align: center;
-    height: 35px;
+    height: 25px;
 }
 
 .reset{

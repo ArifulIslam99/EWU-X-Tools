@@ -44,7 +44,7 @@ const handleGoogleSignIn = () =>{
         backgroundSize :'cover',
         width: '100%',
         backgroundRepeat:'no-repeat',
-        height:'870px',
+        height:'800px',
        
     
     }
@@ -55,7 +55,7 @@ const handleGoogleSignIn = () =>{
             
             </div>
             <div className="mx-auto p-4 login" style={{border: '2px solid gray',
-                        marginTop:'-730px',
+                        marginTop:'-770px',
                         borderRadius:'30px'
                           }}>
 
@@ -115,7 +115,7 @@ const handleGoogleSignIn = () =>{
                        <Button className="my-2" type="submit">Register</Button> <br />
                         
                      
-                        <br />
+                        
                         <p className='fw-bold'>Already a user ? <span ><Link
                    style={{textDecoration:'none'}}
                    to="/"> Please Login</Link></span></p>

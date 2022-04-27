@@ -1,0 +1,10 @@
+.pr-header{
+   border: 2px solid rgb(211, 54, 26);
+   height: 50px;
+   width: auto;
+   background-color: rgb(211, 54, 26);
+}
+
+.head-element{
+    border-right: 2px solid gray;
+}

@@ -44,7 +44,7 @@ const loginStyle={
   backgroundSize :'cover',
   width: '100%',
   backgroundRepeat:'no-repeat',
-  height:'870px',
+  height:'700px',
  
 } 
 
@@ -62,8 +62,8 @@ const  handleForgotPassword = () => {
       <div style={loginStyle} >
             
             </div>
-            <div className="mx-auto p-4 login" style={{border: '2px solid gray',
-                        marginTop:'-700px',
+            <div className="mx-auto p-3 login" style={{border: '2px solid gray',
+                        marginTop:'-650px',
                         borderRadius:'30px'
                           }}>
 

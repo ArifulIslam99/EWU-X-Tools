@@ -1,0 +1,22 @@
+.head-div{
+    margin-top: 10px;
+    border: 2px solid rgb(245, 241, 238);
+    background-color: rgb(9, 94, 65);
+    width: 90%;
+    color: wheat;
+    padding: 5px;
+   
+
+}
+
+.btn-pr{
+    border: 1px solid rgb(63, 45, 18);
+    background-color: rgb(71, 55, 31);
+    color: rgb(255, 255, 255);
+    border-radius: 2px;
+}
+
+.p-name{
+    color: red;
+    font-weight: 700;
+}

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Card } from 'react-bootstrap'
+import { Button, Card, Spinner } from 'react-bootstrap'
 import useAuth from '../../hooks/useAuth'
 
  const Explore = () => {
 
   const [users, setUsers] = useState([])
   const [searchInput, setSearchInput] = useState([])
-  const [userInfo, setUserInfo] = useState(null)
-  const [buttonValue, setButtonValue] = useState(null)
+  const [userInfo, setUserInfo] = useState([])
+  const [buttonValue, setButtonValue] = useState([])
   
   useEffect(()=>{
     fetch(`https://thawing-cove-39806.herokuapp.com/users`)
@@ -21,9 +21,11 @@ import useAuth from '../../hooks/useAuth'
             const filteredResult = users.find(user => user.email.toLowerCase()===(searchInput.toLowerCase()))
             setUserInfo(filteredResult)
   } 
+
+  if(userInfo === null){return <Spinner animation="border" />}
   return (
-    <div style={{backgroundColor:'grey', height:'800px'}}>
-        <h2 className="py-5 text-warning" >Explore Your Friends</h2> 
+    <div style={{backgroundColor:'grey', height:'90vh'}}>
+        <h2 className="py-4 text-warning" >Explore Your Friends</h2> 
 
         
 
@@ -41,13 +43,13 @@ import useAuth from '../../hooks/useAuth'
               (userInfo!=null & buttonValue===1) ?
 
               <div 
-              className='my-5 mx-auto row p-5'
-              style={{width:'65%', backgroundColor:'#F0E0AA', borderRadius:'20px'}}
+              className='my-3 mx-auto row py-4'
+              style={{width:'80%', backgroundColor:'#F9E4F7', borderRadius:'20px'}}
               > 
 
               <div className='col-lg-4'>
                  <img 
-                style={{height:'200px', height:'200px', borderRadius:'20px'}}
+                style={{height:'200px', width:'200px', borderRadius:'20px'}}
                 src={`data:image/jpeg;base64,${userInfo.image}`} alt="" /> 
               </div>
               <div className='col-lg-8 row text-start '>

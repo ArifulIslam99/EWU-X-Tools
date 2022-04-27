@@ -8,6 +8,9 @@ import AuthProvider from './Contexts/AuthProvider/AuthProvider';
 import { PrivateRoute } from './Components/Authentication/PrivateRoute/PrivateRoute';
 import Explore from './Components/Explore/Explore';
 import Create from './Components/Create/Create';
+import Projects from './Components/Projects/Projects';
+import SingleProjects from './Components/Projects/SingleProjects';
+import EditSprint from './Components/Projects/EditSprint';
 
 
 function App() {
@@ -39,9 +42,18 @@ function App() {
           <Route path="/register">
             <Register></Register>
           </Route>
-          <Route path="/create">
+          <PrivateRoute path="/create">
             <Create></Create>
-          </Route>
+          </PrivateRoute>
+          <PrivateRoute path="/projects">
+            <Projects></Projects>
+          </PrivateRoute>
+          <PrivateRoute path="/project/:id">
+            <SingleProjects></SingleProjects>
+          </PrivateRoute>
+          <PrivateRoute path="/edit/:id">
+            <EditSprint></EditSprint>
+          </PrivateRoute>
 
         </Switch>
        </BrowserRouter>
